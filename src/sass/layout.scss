@@ -1,0 +1,35 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+@import "./media.scss";
+
+.section_layout {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $gray-color;
+}
+
+.social_media--aera {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+
+    .icon {
+        padding: 50px 0px 10px 0px ;
+    }
+    .icon_single{
+        color: $white-color;
+    }
+}
+
+.social_media--quote {
+    font-family: $font-montserrat;
+    padding-bottom: 20px;
+    color: $white-color;
+}
+
+

@@ -1,0 +1,16 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+
+.section_final_matches {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: $white-color;
+    justify-content: center;
+    align-items: center;
+
+    .paragraph {
+        font-family: $font-playfair;
+        font-size: 1.5em;
+    }
+}

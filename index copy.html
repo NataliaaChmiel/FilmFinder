@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- page 1 -->
+    <section class="section_landing_page">
+      <div class="section_landing_page--logo">FilmFinder</div>
+      <div class="section_landing_page--photo">Zdjęcie</div>
+      <div class="section_landing_page--welcome">
+        <p class="slp_welcome--quote paragraph">Welcome to the world of film!</p>
+      </div>
+      <div class="lp_buttons_container basic_buttons">
+        <button class="lp_button--start basic_button">Let's go!</button>
+        <button class="lp_button--about basic_button">About us</button>
+      </div>
+      <div class="social_media--aera">
+        <div class="social_media--instagram">Instagram</div>
+        <div class="social_media--twitter">Twitter</div>
+        <div class="social_media--linkedin">Linkedin</div>
+        <p class="social_media--quote paragraph">Find us</p>
+      </div>
+    </section>
+
+<!-- page 2 -->
+    <section class="section_choose_user">
+      <div class="section_choose_user--quote">
+        <p class="choose_user--quote paragraph">Let's catch some movie matches!</p>
+      </div>
+      <div class="section_choose_user--photo">Zdjęcie</div>
+      <div class="user_buttons_container">
+        <button class="user_button--first user_button">Let's go!</button>
+        <button class="user_button--second user_button">About us</button>
+      </div>
+    </section>
+
+<!-- page 3 -->
+    <section class="section_swiping">
+      <div class="section_film_info">
+        <div class="section_film_info--title">Tytuł filmu</div>
+        <div class="section_film_info--poster">Plakat filmu</div>
+        <div class="section_film_info--description">Opis filmu</div>
+      </div>
+      <div class="section_swipe_buttons">
+        <button class="swipe_button--pass swipe-button"></button>
+        <button class="swipe_button--catch swipe-button"></button>
+      </div>
+    </section>
+
+<!-- page 4 -->
+    <section class="section_final_matches">
+      <div class="final_matches--quote">
+        <p class="final_matches--paragraph paragraph">Caught matches</p>
+      </div>
+      <div class="section_catched_matches--list">
+        <ul class="catched_matches--list">
+          <li class="single_match">
+            <div class="single_match--poster">Poster</div>
+            <div class="single_match--title">Title</div>
+          </li>
+        </ul>
+      </div>
+      <div class="section_catched_matches--percentage">
+        <div class="matches_percentage--piechart">Wykres kołowy</div>
+        <p class="matches_percentage--paragraph paragraph">You got [x] matches!</p>
+      </div>
+      <div class="section_try_again_button">
+        <button class="try_again--button basic_button">Try again!</button>
+      </div>
+    </section>
+
+
+  </body>
+</html>

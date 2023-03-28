@@ -1,0 +1,11 @@
+$mobile: 599px;
+$tablet: 900px;
+
+@mixin for-phone-only {
+    @media (max-width: $mobile) { @content }
+  };
+
+@mixin for-tablet-only {
+    @media (max-width: $tablet) { @content }
+  };
+

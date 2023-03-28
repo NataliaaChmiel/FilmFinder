@@ -1,0 +1,43 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+
+.section_swiping {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    justify-content: center;
+    background-color: $white-color;
+
+    .section_film_info {
+        font-family: $font-montserrat;
+        font-size: 1em;
+        padding: 3em;
+        text-align: center;
+    }
+
+    .film_info{
+        padding: 2em;
+    }
+}
+
+.section_swipe_buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8em;
+
+    .swipe-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+        width: 4em;
+        height: 4em;
+        border-radius: 50%;
+        border-color: $pinkish-color;
+        font-family: $font-montserrat;
+        font-size: 1em;
+        background-color: $pinkish-color;
+        color: $white-color;
+        margin-bottom: 2em;
+    }
+}

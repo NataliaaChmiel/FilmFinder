@@ -1,0 +1,35 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+
+
+
+
+.section_choose_user {
+    width: 100%;
+    margin: 0 auto;
+    background-color: $white-color;
+
+    .choose_user--quote {
+        display: flex;
+        justify-content: center;
+        font-family: $font-playfair;
+        font-size: 1.5em;
+    }
+
+    .user_button {
+        display: block;
+        margin: 0 auto;
+        padding: 1em;
+        width: 10em;
+        border-radius: 30px;
+        border-color: $pinkish-color;
+        font-family: $font-montserrat;
+        font-size: 1em;
+        background-color: $pinkish-color;
+        color: $white-color;
+        margin-bottom: 2em;
+    }
+}
+
+
+
