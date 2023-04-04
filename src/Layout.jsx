@@ -18,17 +18,17 @@ export function Layout(props) {
         {props.children}
 
         <div className="social_media--aera">
-          <div className="social_media--instagram icon">
+          <div className="social_media--instagram icon-area">
             <span className="icon_single">
               <FontAwesomeIcon icon={faInstagram} size={"2xl"} />
             </span>
           </div>
-          <div className="social_media--twitter icon">
+          <div className="social_media--twitter icon-area">
             <span className="icon_single">
               <FontAwesomeIcon icon={faTwitter} size={"2xl"} />
             </span>
           </div>
-          <div className="social_media--linkedin icon">
+          <div className="social_media--linkedin icon-area">
             <span className="icon_single">
               <FontAwesomeIcon icon={faLinkedin} size={"2xl"} />
             </span>

@@ -1,0 +1,19 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+@import "./mixins.scss";
+
+
+.section_choose_user {
+    @include basicBackground;
+
+    .choose_user--paragraph {
+        display: flex;
+        padding: 1em;
+        justify-content: center;
+        @include appFont(1.5em);
+    }
+
+    .user_button {
+        @include basicButton;
+    }
+}

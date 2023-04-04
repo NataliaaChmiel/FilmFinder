@@ -1,43 +1,40 @@
 @import "./colors.scss";
 @import "./fonts.scss";
+@import "./mixins.scss";
 
 .section_swiping {
-    width: 100%;
-    margin: 0 auto;
     display: block;
     justify-content: center;
-    background-color: $white-color;
+    //to do: 1.styling section inside with border radius 
+    //to do: 2.changing the mixin below
+
+    @include basicBackground;
 
     .section_film_info {
-        font-family: $font-montserrat;
-        font-size: 1em;
+        display: flex;
+        flex-direction: column;
         padding: 3em;
+        font-size: 1em;
+        font-family: $font-montserrat;
         text-align: center;
     }
 
-    .film_info{
+    .film_info {
         padding: 2em;
+    }
+
+    .film-poster {
+        width: 200px;
+        height: 250px;
     }
 }
 
 .section_swipe_buttons {
     display: flex;
-    justify-content: center;
     gap: 8em;
+    justify-content: center;
 
     .swipe-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1em;
-        width: 4em;
-        height: 4em;
-        border-radius: 50%;
-        border-color: $pinkish-color;
-        font-family: $font-montserrat;
-        font-size: 1em;
-        background-color: $pinkish-color;
-        color: $white-color;
-        margin-bottom: 2em;
+        @include swipeButtons;
     }
 }

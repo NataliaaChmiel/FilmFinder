@@ -1,11 +1,9 @@
-$mobile: 599px;
+$mobile: 400px;
 $tablet: 900px;
 
-@mixin for-phone-only {
-    @media (max-width: $mobile) { @content }
-  };
+@mixin forPhoneOnly {
+    @media (min-width: $mobile) and (max-width: $tablet) {
 
-@mixin for-tablet-only {
-    @media (max-width: $tablet) { @content }
+    }
   };
 

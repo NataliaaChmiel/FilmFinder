@@ -22,7 +22,7 @@ export function Result() {
         </div>
         <div className="section_try_again_button">
           <LinkButton to="/start" className="try_again--button basic_button">
-            Let's go!
+            Try again!
           </LinkButton>
         </div>
       </section>

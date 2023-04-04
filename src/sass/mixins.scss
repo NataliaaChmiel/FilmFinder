@@ -1,0 +1,75 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+
+//basic paragraph and quotes
+@mixin appFont($fontSize) {
+    font-family: $font-playfair;
+    font-size: $fontSize;
+    color: $black-color;
+}
+
+//basic buttons
+@mixin basicButton {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    border-radius: 30px;
+    border-color: $pinkish-color;
+    width: 10em;
+    padding: 1em;
+    font-family: $font-montserrat;
+    font-size: 1em;
+    background-color: $pinkish-color;
+    color: $white-color;
+}
+
+//swipe buttons in /play
+@mixin swipeButtons {
+        display: flex;
+        margin-bottom: 2em;
+        border-radius: 50%;
+        border-color: $pinkish-color;
+        width: 4em;
+        height: 4em;
+        padding: 1em;
+        justify-content: center;
+        align-items: center;
+        background-color: $pinkish-color;
+        font-size: 1em;
+        font-family: $font-montserrat;
+        color: $white-color;
+}
+
+//page bgrd
+@mixin basicBackground {
+    width: 100%;
+    background-color: $white-color;
+    margin: 0 auto;
+}
+
+//layout section
+@mixin layoutSection {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: $gray-color;
+    justify-content: center;
+    align-items: center;
+}
+
+//social media footer
+@mixin socialMediaFooter {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+//icons in footer
+@mixin iconAeraFooter {
+    padding: 20px 20px 20px 20px;
+    margin-top: 20px;
+    color: $white-color;
+}
+

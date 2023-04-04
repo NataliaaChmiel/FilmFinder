@@ -1,14 +1,14 @@
 @import "./colors.scss";
 @import "./fonts.scss";
+@import "./mixins.scss";
 
 .section_about_us_page {
-    width: 100%;
     display: flex;
     justify-content: center;
-    background-color: $white-color;
+
+    @include basicBackground;
 
     .about_us--paragraph {
-        font-family: $font-playfair;
-        font-size: 1.5em;
+        @include appFont(1.5em);
     }
 }

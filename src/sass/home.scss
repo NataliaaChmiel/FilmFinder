@@ -1,16 +1,15 @@
 @import "./colors.scss";
 @import "./fonts.scss";
-
+@import "./mixins.scss";
 
 .section_landing_page {
-    width: 100%;
-    background-color: $white-color;
     display: inline-block;
     justify-content: center;
+    @include basicBackground;
 
     .home_pic {
-        width: 100%;
         display: block;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
         justify-content: center;
@@ -21,8 +20,7 @@
 .slp_welcome--quote {
     display: flex;
     justify-content: center;
-    font-family: $font-playfair;
-    font-size: 1.5em;
+    @include appFont(1.5em);
 }
 
 .lp_buttons_container {
@@ -31,15 +29,5 @@
 }
 
 .basic_button {
-    display: block;
-    margin: 0 auto;
-    padding: 1em;
-    width: 10em;
-    border-radius: 30px;
-    border-color: $pinkish-color;
-    font-family: $font-montserrat;
-    font-size: 1em;
-    background-color: $pinkish-color;
-    color: $white-color;
-    margin-bottom: 2em;
+    @include basicButton;
 }
