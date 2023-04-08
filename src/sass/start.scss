@@ -1,12 +1,15 @@
 @import "./colors.scss";
 @import "./fonts.scss";
 @import "./mixins.scss";
-
+@import "./home.scss";
 
 
 .section_start_game {
     @include basicBackground;
 
+    .page_pic {
+        @include pagePicture;
+    }
     .start_game--quote {
         display: flex;
         justify-content: center;

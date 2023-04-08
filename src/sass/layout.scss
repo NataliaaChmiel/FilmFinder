@@ -5,6 +5,11 @@
 
 .section_layout {
     @include layoutSection;
+    max-width: 400px;
+}
+
+.section_landing_page--logo {
+    padding: 20px;
 }
 
 .social_media--aera {

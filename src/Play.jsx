@@ -1,7 +1,7 @@
 import { faXmark, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import LinkButton from "./LinkButton";
 
 export function Play() {
@@ -29,6 +29,24 @@ export function Play() {
     nextPage = `/result`;
   }
 
+  const navigate = useNavigate();
+  const clickHandler = () => {
+    console.log(`${userNumber} polubil film ${movieNumber}`);
+    // 1. wczytaj istniejącą wartość z local storage
+    // 2. zdekoduj wczytaną wartość z json na zmienna
+    // 3. dodaj do tablicy movienumber
+    // 4. nową tablicę na json
+    // 5. zapisz ls
+
+    const saved = localStorage.getItem(`selectedMoviesUser${userNumber}`); //1
+    const selectedMovies = JSON.parse(saved); //2
+    selectedMovies.push(movieNumber);
+    const json = JSON.stringify(selectedMovies);
+    localStorage.setItem(`selectedMoviesUser${userNumber}`, json);
+    navigate(nextPage);
+
+  }
+
   return (
     <>
       <section className="section_swiping">
@@ -52,14 +70,14 @@ export function Play() {
               <FontAwesomeIcon icon={faXmark} size={"2xl"} />
             </span>
           </LinkButton>
-          <LinkButton
-            to={nextPage}
+          <button
+            onClick={clickHandler}
             className="swipe_button--catch swipe-button"
           >
             <span className="icon_check icon">
               <FontAwesomeIcon icon={faCheck} size={"2xl"} />
             </span>
-          </LinkButton>
+          </button>
         </div>
       </section>
     </>

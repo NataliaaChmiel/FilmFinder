@@ -10,12 +10,20 @@ export function Start() {
     const selectedMovies = movies.sort(() => 0.5 - Math.random()).splice(0, 10);
     const json = JSON.stringify(selectedMovies);
     localStorage.setItem("storedMovies", json);
+    localStorage.setItem("selectedMoviesUser1", JSON.stringify([]));
+    localStorage.setItem("selectedMoviesUser2", JSON.stringify([]));
     navigate("/user/1");
   };
 
   return (
     <>
       <section className="section_start_game">
+        <div className="section_start--photo">
+          <img
+            src="./src/assets/pexels-lucas-pezeta-2398354.jpg"
+            className="page_pic"
+          ></img>
+        </div>
         <div className="section_start_game--quote">
           <p className="start_game--quote paragraph">
             Let's catch some movie matches!
@@ -23,7 +31,7 @@ export function Start() {
         </div>
         <div className="start_buttons_container">
           <button onClick={clickHandler} className="start_game_button">
-            Let's go
+            Let's go!
           </button>
         </div>
       </section>

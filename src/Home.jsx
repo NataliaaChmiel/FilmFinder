@@ -5,7 +5,7 @@ export function Home() {
     <>
       <section className="section_landing_page">
         <div className="section_landing_page--photo">
-          <img src="./src/assets/hollywood.jpg" className="home_pic"></img>
+          <img src="./src/assets/tech-daily-PGuCnUzsRSM-unsplash.jpg" className="page_pic"></img>
         </div>
         <div className="section_landing_page--welcome">
           <p className="slp_welcome--quote paragraph">

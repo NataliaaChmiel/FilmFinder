@@ -7,13 +7,8 @@
     justify-content: center;
     @include basicBackground;
 
-    .home_pic {
-        display: block;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        justify-content: center;
-        object-fit: cover;
+    .page_pic {
+        @include pagePicture;
     }
 } 
 

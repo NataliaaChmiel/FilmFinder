@@ -15,3 +15,15 @@
 
     }
 }
+
+.section_catched_matches--list {
+    justify-content: center;
+    li {
+        display: flex;
+        list-style-type: none; 
+        width: 200px;
+        height: 250px;
+        padding: 1em;
+        
+    }
+}
