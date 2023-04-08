@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import LinkButton from "./LinkButton";
 // @ts-ignore
+import picture from "./assets/pexels-lucas-pezeta-2398354.jpg";
+// @ts-ignore
 import movies from "./assets/movies.json";
 
 export function Start() {
@@ -20,7 +22,7 @@ export function Start() {
       <section className="section_start_game">
         <div className="section_start--photo">
           <img
-            src="./src/assets/pexels-lucas-pezeta-2398354.jpg"
+            src={picture}
             className="page_pic"
           ></img>
         </div>

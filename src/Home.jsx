@@ -1,11 +1,12 @@
 import LinkButton from "./LinkButton";
-
+// @ts-ignore
+import picture from "./assets/tech-daily-PGuCnUzsRSM-unsplash.jpg";
 export function Home() {
   return (
     <>
       <section className="section_landing_page">
         <div className="section_landing_page--photo">
-          <img src="./src/assets/tech-daily-PGuCnUzsRSM-unsplash.jpg" className="page_pic"></img>
+          <img src={picture} className="page_pic"></img>
         </div>
         <div className="section_landing_page--welcome">
           <p className="slp_welcome--quote paragraph">
