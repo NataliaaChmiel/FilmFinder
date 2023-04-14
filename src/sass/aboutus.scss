@@ -5,6 +5,8 @@
 .section_about_us_page {
     display: flex;
     justify-content: center;
+    flex-grow: 1;
+
 
     @include basicBackground;
 

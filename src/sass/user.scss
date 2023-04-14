@@ -5,12 +5,26 @@
 
 .section_choose_user {
     @include basicBackground;
+    flex-grow: 1;
 
     .choose_user--paragraph {
         display: flex;
         padding: 1em;
         justify-content: center;
+        margin-bottom: 1em;
         @include appFont(1.5em);
+    }
+
+    .choose_user-form {
+        display: flex;
+        justify-content: center;
+    }
+
+    .choose_user-input {
+        @include appFont(1.5em);
+        margin-bottom: 3em;
+        border: 0;
+        text-align: center;
     }
 
     .user_button {

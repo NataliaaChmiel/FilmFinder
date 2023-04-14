@@ -11,8 +11,10 @@ export function Layout(props) {
   return (
     <>
       <section className="section_layout">
-        <div className="section_landing_page--logo">
-          <img src={logo} className="logo" />
+        <div className="section_landing_page--logo-section">
+          <div className="section_landing_page--logo">
+            <img src={logo} className="logo" />
+          </div>
         </div>
 
         {props.children}

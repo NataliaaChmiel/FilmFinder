@@ -1,5 +1,9 @@
-@import "./media";
+#root {
+    min-height: 100vh;
+
+}
 
 body {
-    @include forPhoneOnly;
+    margin: 0;
+    min-height: 100vh;
 }
