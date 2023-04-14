@@ -1,13 +1,7 @@
 import LinkButton from "./LinkButton";
 
 export function Result() {
-  // 1. porównać obie tablice
-  // - wziąć z ls
-  // - rozkodować
-  // - wspólne numery filmów zamienic na filmy
-  // - wczyttać z ls wylosowane filmy
-  // - rozkodować
-  // 2. zrobić trzecią ze wpólnymi filmami i ją wyświetlić w result
+
   const savedFilms1 = localStorage.getItem(`selectedMoviesUser1`);
   const savedFilms2 = localStorage.getItem(`selectedMoviesUser2`);
   const selectedMoviesUser1 = JSON.parse(savedFilms1);

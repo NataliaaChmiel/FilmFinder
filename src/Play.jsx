@@ -32,11 +32,6 @@ export function Play() {
   const navigate = useNavigate();
   const clickHandler = () => {
     console.log(`${userNumber} polubil film ${movieNumber}`);
-    // 1. wczytaj istniejącą wartość z local storage
-    // 2. zdekoduj wczytaną wartość z json na zmienna
-    // 3. dodaj do tablicy movienumber
-    // 4. nową tablicę na json
-    // 5. zapisz ls
 
     const saved = localStorage.getItem(`selectedMoviesUser${userNumber}`); //1
     const selectedMovies = JSON.parse(saved); //2
