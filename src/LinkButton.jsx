@@ -9,3 +9,4 @@ export default function LinkButton({ to, children, ...rest }) {
     </button>
   );
 }
+
