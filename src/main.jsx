@@ -20,37 +20,63 @@ import { Play } from "./Play";
 import { Result } from "./Result";
 import { AboutUs } from "./AboutUs";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout><Home /></Layout>,
+    element: (
+      <Layout>
+        <Home />
+      </Layout>
+    ),
   },
   {
     path: "/start",
-    element: <Layout><Start /></Layout>,
+    element: (
+      <Layout>
+        <Start />
+      </Layout>
+    ),
   },
   {
     path: "/user",
-    element: <Layout><User /></Layout>,
+    element: (
+      <Layout>
+        <User />
+      </Layout>
+    ),
   },
   {
     path: "/user/:userNumber",
-    element: <Layout><User /></Layout>,
+    element: (
+      <Layout>
+        <User />
+      </Layout>
+    ),
   },
   {
     path: "/user/:userNumber/movie/:movieNumber",
-    element: <Layout><Play /></Layout>,
+    element: (
+      <Layout>
+        <Play />
+      </Layout>
+    ),
   },
   {
     path: "/result",
-    element: <Layout><Result /></Layout>,
+    element: (
+      <Layout>
+        <Result />
+      </Layout>
+    ),
   },
   {
-  path: "/aboutus",
-  element: <Layout><AboutUs /></Layout>,
-}
-  
+    path: "/aboutus",
+    element: (
+      <Layout>
+        <AboutUs />
+      </Layout>
+    ),
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

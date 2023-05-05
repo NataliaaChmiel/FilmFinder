@@ -39,8 +39,7 @@ export function Play() {
     const json = JSON.stringify(selectedMovies);
     localStorage.setItem(`selectedMoviesUser${userNumber}`, json);
     navigate(nextPage);
-
-  }
+  };
 
   return (
     <>

@@ -3,7 +3,6 @@ $tablet: 900px;
 
 @mixin forPhoneOnly {
     @media (min-width: $mobile) and (max-width: $tablet) {
-
     }
   };
 

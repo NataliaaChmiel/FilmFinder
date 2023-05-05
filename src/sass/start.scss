@@ -7,10 +7,10 @@
 .section_start_game {
     @include basicBackground;
 
-
     .page_pic {
         @include pagePicture;
     }
+    
     .start_game--quote {
         display: flex;
         justify-content: center;
