@@ -1,17 +1,22 @@
 import LinkButton from "./LinkButton";
 
+
+const getLocalStorageItemAndParse = (localStorageItemKey: string) => {
+  const savedJson = localStorage.getItem(localStorageItemKey);
+  const parsed = JSON.parse(savedJson  || "[]");
+  return parsed;
+}
+
 export function Result() {
 
-  const savedFilms1 = localStorage.getItem(`selectedMoviesUser1`);
-  const savedFilms2 = localStorage.getItem(`selectedMoviesUser2`);
-  const selectedMoviesUser1 = JSON.parse(savedFilms1);
-  const selectedMoviesUser2 = JSON.parse(savedFilms2);
+  const selectedMoviesUser1: number[] = getLocalStorageItemAndParse(`selectedMoviesUser1`)
+  const selectedMoviesUser2: number[] = getLocalStorageItemAndParse(`selectedMoviesUser2`);
 
   const matches = selectedMoviesUser1.filter((value) =>
     selectedMoviesUser2.includes(value)
   );
-  const saved = localStorage.getItem("storedMovies");
-  const storedMovies = JSON.parse(saved);
+
+  const storedMovies = getLocalStorageItemAndParse(`storedMovies`);
   const results = matches.map((num) => storedMovies[num - 1]);
 
   return (

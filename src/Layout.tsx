@@ -7,7 +7,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
-export function Layout(props) {
+export function Layout(props: React.PropsWithChildren) {
   return (
     <>
       <section className="section_layout">

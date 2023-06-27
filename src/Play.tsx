@@ -1,30 +1,31 @@
 import { faXmark, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { To, useNavigate, useParams } from "react-router-dom";
 import LinkButton from "./LinkButton";
 
 export function Play() {
   const { movieNumber: movieNumberString } = useParams();
   const movieNumber = Number(movieNumberString);
-  const { userNumber } = useParams();
+  const { userNumber} = useParams();
+  const parsedUserNumber = parseInt(userNumber || "");
 
-  const [storedMovies, setStoredMovies] = useState(() => {
-    const saved = localStorage.getItem("storedMovies");
-    const initialValue = JSON.parse(saved);
+  const [storedMovies] = useState(() => {
+    const saved = localStorage.getItem("storedMovies") ;
+    const initialValue = JSON.parse(saved || "[]");
     return initialValue;
   });
 
-  let currentMovie = storedMovies[movieNumber - 1];
+  const currentMovie = storedMovies[movieNumber - 1];
 
-  let nextPage;
+  let nextPage: To;
 
   const hasNextMovie = movieNumber !== storedMovies.length;
-  const isLastUser = parseInt(userNumber) === 2;
+  const isLastUser = parsedUserNumber === 2;
   if (hasNextMovie) {
-    nextPage = `/user/${userNumber}/movie/${movieNumber + 1}`;
+    nextPage = `/user/${parsedUserNumber}/movie/${movieNumber + 1}`;
   } else if (!isLastUser) {
-    nextPage = `/user/${parseInt(userNumber) + 1}`;
+    nextPage = `/user/${parsedUserNumber + 1}`;
   } else {
     nextPage = `/result`;
   }
@@ -33,8 +34,8 @@ export function Play() {
   const clickHandler = () => {
     console.log(`${userNumber} polubil film ${movieNumber}`);
 
-    const saved = localStorage.getItem(`selectedMoviesUser${userNumber}`); //1
-    const selectedMovies = JSON.parse(saved); //2
+    const saved = localStorage.getItem(`selectedMoviesUser${userNumber}`);
+    const selectedMovies = JSON.parse(saved || "[]");
     selectedMovies.push(movieNumber);
     const json = JSON.stringify(selectedMovies);
     localStorage.setItem(`selectedMoviesUser${userNumber}`, json);

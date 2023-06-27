@@ -1,5 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
-import LinkButton from "./LinkButton";
+import { useNavigate } from "react-router-dom";
 // @ts-ignore
 import picture from "./assets/pexels-lucas-pezeta-2398354.jpg";
 // @ts-ignore
