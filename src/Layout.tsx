@@ -7,6 +7,39 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
+enum SocialNetwork {
+  Instagram,
+  Twitter,
+  Linkedin,
+}
+
+type SocialMediaIconProps = {
+  name: SocialNetwork;
+};
+
+const SocialMediaIcon = ({ name }: SocialMediaIconProps) => {
+  let icon;
+  switch (name) {
+    case SocialNetwork.Instagram:
+      icon = faInstagram;
+      break;
+    case SocialNetwork.Twitter:
+      icon = faTwitter;
+      break;
+    case SocialNetwork.Linkedin:
+      icon = faLinkedin;
+      break;
+  }
+
+  return (
+    <div className={`social_media--${icon} icon-area`}>
+      <span className="icon_single">
+        <FontAwesomeIcon icon={icon} size={"2xl"} />
+      </span>
+    </div>
+  );
+};
+
 export function Layout(props: React.PropsWithChildren) {
   return (
     <>
@@ -20,22 +53,11 @@ export function Layout(props: React.PropsWithChildren) {
         {props.children}
 
         <div className="social_media--aera">
-          <div className="social_media--instagram icon-area">
-            <span className="icon_single">
-              <FontAwesomeIcon icon={faInstagram} size={"2xl"} />
-            </span>
-          </div>
-          <div className="social_media--twitter icon-area">
-            <span className="icon_single">
-              <FontAwesomeIcon icon={faTwitter} size={"2xl"} />
-            </span>
-          </div>
-          <div className="social_media--linkedin icon-area">
-            <span className="icon_single">
-              <FontAwesomeIcon icon={faLinkedin} size={"2xl"} />
-            </span>
-          </div>
+          <SocialMediaIcon name={SocialNetwork.Instagram} />
+          <SocialMediaIcon name={SocialNetwork.Twitter} />
+          <SocialMediaIcon name={SocialNetwork.Linkedin} />
         </div>
+
         <p className="social_media--quote paragraph">Find us</p>
       </section>
     </>

@@ -1,22 +1,31 @@
 import LinkButton from "./LinkButton";
+import { MovieDetails } from "./MovieDetails";
+import { getLocalStorageItemAndParse } from "./getLocalStorageItemAndParse";
 
+type MatchedMovieListItemProps = {
+  movie: MovieDetails;
+};
 
-const getLocalStorageItemAndParse = (localStorageItemKey: string) => {
-  const savedJson = localStorage.getItem(localStorageItemKey);
-  const parsed = JSON.parse(savedJson  || "[]");
-  return parsed;
-}
+const MatchedMovieListItem = ({ movie }: MatchedMovieListItemProps) => {
+  return (
+    <li>
+      <img src={`/posters/${movie.id}.jpg`} className="film-poster"></img>
+    </li>
+  );
+};
 
 export function Result() {
-
-  const selectedMoviesUser1: number[] = getLocalStorageItemAndParse(`selectedMoviesUser1`)
-  const selectedMoviesUser2: number[] = getLocalStorageItemAndParse(`selectedMoviesUser2`);
+  const selectedMoviesUser1: number[] =
+    getLocalStorageItemAndParse(`selectedMoviesUser1`);
+  const selectedMoviesUser2: number[] =
+    getLocalStorageItemAndParse(`selectedMoviesUser2`);
 
   const matches = selectedMoviesUser1.filter((value) =>
     selectedMoviesUser2.includes(value)
   );
 
-  const storedMovies = getLocalStorageItemAndParse(`storedMovies`);
+  const storedMovies: MovieDetails[] =
+    getLocalStorageItemAndParse(`storedMovies`);
   const results = matches.map((num) => storedMovies[num - 1]);
 
   return (
@@ -27,13 +36,7 @@ export function Result() {
         </div>
         <div className="section_catched_matches--list">
           {results.map((movie) => (
-            <li key={movie.id}>
-              {" "}
-              <img
-                src={`/posters/${movie.id}` + ".jpg"}
-                className="film-poster"
-              ></img>
-            </li>
+            <MatchedMovieListItem key={movie.id} movie={movie} />
           ))}
         </div>
         <div className="section_catched_matches--percentage">
