@@ -2,9 +2,11 @@ import { faXmark, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { To, useNavigate, useParams } from "react-router-dom";
-import LinkButton from "./LinkButton";
 import { getLocalStorageItemAndParse } from "./getLocalStorageItemAndParse";
 import { MovieDetails } from "./MovieDetails";
+import styled from "@emotion/styled";
+import { theme } from "./theme";
+
 
 type CurrentMovieDetailsProps = {
   details: MovieDetails;
@@ -29,21 +31,51 @@ type SwipeButtonsProps = {
   clickHandler: () => void;
 };
 
+const SwippingButton = styled.button({
+  display: "flex",
+  marginBottom: "2em",
+  borderRadius: "50%",
+  borderColor: theme.colors.blueMain,
+  width: "4em",
+  height: "4em",
+  padding: "1em",
+  justifyContent: "center",
+  alignItems: "center",
+  backgroundColor: theme.colors.blueMain,
+  fontSize: "1em",
+  fontFamily: theme.fonts.fontMontserrat,
+  color: theme.colors.white,
+});
+
+type LinkButtonProps = {
+  to: To;
+  children: React.ReactNode;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+ function SwippingLinkButton({ to, children, ...rest }: LinkButtonProps) {
+  const navigate = useNavigate();
+
+  return (
+    <SwippingButton onClick={() => navigate(to)} {...rest}>
+      {children}
+    </SwippingButton>
+  );
+}
+//do naprawy
 const SwipeButtons = ({ nextPage, clickHandler }: SwipeButtonsProps) => {
   return (
     <>
-      <LinkButton to={nextPage} className="swipe_button--pass swipe-button">
+      <SwippingLinkButton to={nextPage}>
         <span className="icon_xmark icon">
           <FontAwesomeIcon icon={faXmark} size={"2xl"} />
         </span>
-      </LinkButton>
-      <button
-        onClick={clickHandler}
-        className="swipe_button--catch swipe-button">
+      </SwippingLinkButton>
+      <SwippingButton
+        onClick={clickHandler}>
         <span className="icon_check icon">
           <FontAwesomeIcon icon={faCheck} size={"2xl"} />
         </span>
-      </button>
+      </SwippingButton>
     </>
   );
 };

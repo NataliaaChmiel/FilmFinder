@@ -9,37 +9,37 @@
 }
 
 //basic buttons
-@mixin basicButton {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 2em;
-    border-radius: 30px;
-    border-color: $basic-button-color;
-    width: 10em;
-    padding: 1em;
-    font-family: $font-montserrat;
-    font-size: 1em;
-    background-color: $basic-button-color;
-    color: $white-color;
-    box-shadow: 2px 7px 42px -1px rgba(183, 177, 167, 1);
-}
+// @mixin basicButton {
+//     // display: block;
+//     // margin: 0 auto;
+//     // margin-bottom: 2em;
+//     // border-radius: 30px;
+//     // border-color: $basic-button-color;
+//     // width: 10em;
+//     // padding: 1em;
+//     // font-family: $font-montserrat;
+//     // font-size: 1em;
+//     // background-color: $basic-button-color;
+//     // color: $white-color;
+//     // box-shadow: 2px 7px 42px -1px rgba(183, 177, 167, 1);
+// }
 
 //swipe buttons in /play
-@mixin swipeButtons {
-    display: flex;
-    margin-bottom: 2em;
-    border-radius: 50%;
-    border-color: $blue-main-color;
-    width: 4em;
-    height: 4em;
-    padding: 1em;
-    justify-content: center;
-    align-items: center;
-    background-color: $blue-main-color;
-    font-size: 1em;
-    font-family: $font-montserrat;
-    color: $white-color;
-}
+// @mixin swipeButtons {
+//     // display: flex;
+//     // margin-bottom: 2em;
+//     // border-radius: 50%;
+//     // border-color: $blue-main-color;
+//     // width: 4em;
+//     // height: 4em;
+//     // padding: 1em;
+//     // justify-content: center;
+//     // align-items: center;
+//     // background-color: $blue-main-color;
+//     // font-size: 1em;
+//     // font-family: $font-montserrat;
+//     // color: $white-color;
+// }
 
 //page bgrd
 @mixin basicBackground {

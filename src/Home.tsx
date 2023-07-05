@@ -1,4 +1,4 @@
-import LinkButton from "./LinkButton";
+import {StyledLinkButton} from "./LinkButton";
 // @ts-ignore
 import picture from "./assets/tech-daily-PGuCnUzsRSM-unsplash.jpg";
 export function Home() {
@@ -14,12 +14,12 @@ export function Home() {
           </p>
         </div>
         <div className="lp_buttons_container basic_buttons">
-          <LinkButton to="/start" className="lp_button--start basic_button">
+          <StyledLinkButton to="/start" className="lp_button--start basic_button">
             Let's go!
-          </LinkButton>
-          <LinkButton to="/aboutus" className="lp_button--about basic_button">
+          </StyledLinkButton>
+          <StyledLinkButton to="/aboutus" className="lp_button--about basic_button">
             About us
-          </LinkButton>
+          </StyledLinkButton>
         </div>
       </section>
     </>

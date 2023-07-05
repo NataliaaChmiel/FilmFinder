@@ -1,4 +1,4 @@
-import LinkButton from "./LinkButton";
+import { StyledLinkButton } from "./LinkButton";
 import { MovieDetails } from "./MovieDetails";
 import { getLocalStorageItemAndParse } from "./getLocalStorageItemAndParse";
 
@@ -45,9 +45,11 @@ export function Result() {
           </p>
         </div>
         <div className="section_try_again_button">
-          <LinkButton to="/start" className="try_again--button basic_button">
+          <StyledLinkButton
+            to="/start"
+            className="try_again--button basic_button">
             Try again!
-          </LinkButton>
+          </StyledLinkButton>
         </div>
       </section>
     </>

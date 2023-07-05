@@ -10,7 +10,6 @@ import "./sass/home.scss";
 import "./sass/start.scss";
 import "./sass/play.scss";
 import "./sass/result.scss";
-import "./sass/aboutus.scss";
 import "./sass/user.scss";
 import { Layout } from "./Layout";
 import { Home } from "./Home";
@@ -19,6 +18,8 @@ import { User } from "./User";
 import { Play } from "./Play";
 import { Result } from "./Result";
 import { AboutUs } from "./AboutUs";
+import { ThemeProvider } from "@emotion/react";
+import { theme } from "./theme";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +82,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
 );

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import LinkButton from "./LinkButton";
+import { StyledLinkButton } from "./LinkButton";
 import { useState } from "react";
 
 export function User() {
@@ -21,13 +21,11 @@ export function User() {
           </label>
         </div>
         <div className="choose_user_buttons">
-          <LinkButton
+          <StyledLinkButton
             to={`/user/${userNumber}/movie/1`}
-            className="choose_user_button--first user_button"
-            disabled={firstName === ""}
-          >
+            disabled={firstName === ""}>
             Play as {firstName}
-          </LinkButton>
+          </StyledLinkButton>
         </div>
       </section>
     </>

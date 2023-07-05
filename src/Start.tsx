@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import picture from "./assets/pexels-lucas-pezeta-2398354.jpg";
 // @ts-ignore
 import movies from "./assets/movies.json";
+import { RoundedButton } from "./LinkButton";
+
 
 export function Start() {
   const navigate = useNavigate();
@@ -31,9 +33,7 @@ export function Start() {
           </p>
         </div>
         <div className="start_buttons_container">
-          <button onClick={clickHandler} className="start_game_button">
-            Let's go!
-          </button>
+          <RoundedButton onClick={clickHandler}>Let's go!</RoundedButton>
         </div>
       </section>
     </>
