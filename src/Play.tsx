@@ -6,7 +6,28 @@ import { getLocalStorageItemAndParse } from "./getLocalStorageItemAndParse";
 import { MovieDetails } from "./MovieDetails";
 import styled from "@emotion/styled";
 import { theme } from "./theme";
+import { StyledSection } from "./StyledSection";
 
+const SwipingSection = styled(StyledSection)({
+  justifyContent: "center",
+  display: "block",
+});
+
+const FilmInfo = styled.div({
+  display: "flex",
+  flexDirection: "column",
+  padding: "3em",
+  fontSize: "1em",
+  fontFamily: theme.fonts.fontMontserrat,
+  textAlign: "center",
+});
+
+const SwipeButtonsContainer = styled.div({
+  display: "flex",
+  gap: "8em",
+  justifyContent: "center",
+  paddingBottom: "5em",
+});
 
 type CurrentMovieDetailsProps = {
   details: MovieDetails;
@@ -15,13 +36,9 @@ type CurrentMovieDetailsProps = {
 const CurrentMovieDetails = ({ details }: CurrentMovieDetailsProps) => {
   return (
     <>
-      <div className="section_film_info--title film_info">{details.title}</div>
-      <div className="section_film_info--poster film_info">
-        <img src={`/posters/${details.id}.jpg`} className="film-poster"></img>
-      </div>
-      <div className="section_film_info--description film_info">
-        {details.plot}
-      </div>
+      <FilmInfo>{details.title}</FilmInfo>
+      <img src={`/posters/${details.id}.jpg`}></img>
+      <FilmInfo>{details.plot}</FilmInfo>
     </>
   );
 };
@@ -52,7 +69,7 @@ type LinkButtonProps = {
   children: React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
- function SwippingLinkButton({ to, children, ...rest }: LinkButtonProps) {
+function SwippingLinkButton({ to, children, ...rest }: LinkButtonProps) {
   const navigate = useNavigate();
 
   return (
@@ -66,15 +83,10 @@ const SwipeButtons = ({ nextPage, clickHandler }: SwipeButtonsProps) => {
   return (
     <>
       <SwippingLinkButton to={nextPage}>
-        <span className="icon_xmark icon">
           <FontAwesomeIcon icon={faXmark} size={"2xl"} />
-        </span>
       </SwippingLinkButton>
-      <SwippingButton
-        onClick={clickHandler}>
-        <span className="icon_check icon">
+      <SwippingButton onClick={clickHandler}>
           <FontAwesomeIcon icon={faCheck} size={"2xl"} />
-        </span>
       </SwippingButton>
     </>
   );
@@ -108,7 +120,7 @@ export function Play() {
 
   const navigate = useNavigate();
   const clickHandler = () => {
-    console.log(`${userNumber} polubil film ${movieNumber}`);
+    console.log(`${userNumber} liked movie ${movieNumber}`);
 
     const saved = localStorage.getItem(`selectedMoviesUser${userNumber}`);
     const selectedMovies = JSON.parse(saved || "[]");
@@ -120,14 +132,14 @@ export function Play() {
 
   return (
     <>
-      <section className="section_swiping">
-        <div className="section_film_info">
+      <SwipingSection>
+        <FilmInfo>
           <CurrentMovieDetails details={currentMovie} />
-        </div>
-        <div className="section_swipe_buttons">
+        </FilmInfo>
+        <SwipeButtonsContainer>
           <SwipeButtons nextPage={nextPage} clickHandler={clickHandler} />
-        </div>
-      </section>
+        </SwipeButtonsContainer>
+      </SwipingSection>
     </>
   );
 }

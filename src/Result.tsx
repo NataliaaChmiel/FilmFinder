@@ -1,6 +1,29 @@
+import { AppFont } from "./AppFont";
 import { StyledLinkButton } from "./LinkButton";
 import { MovieDetails } from "./MovieDetails";
+import { StyledSection } from "./StyledSection";
 import { getLocalStorageItemAndParse } from "./getLocalStorageItemAndParse";
+import styled from "@emotion/styled";
+
+const ResultSection = styled(StyledSection)({
+  display: "flex",
+  justifyContent: "center",
+  flexDirection: "column",
+  alignItems: "center",
+});
+
+const ResultMatchedList = styled.div({
+  justifyContent: "center",
+});
+
+const ListItemResult = styled.li({
+  display: "flex",
+  listStyleType: "none",
+  width: "200px",
+  height: "250px",
+  padding: "1em",
+  justifyContent: "center",
+});
 
 type MatchedMovieListItemProps = {
   movie: MovieDetails;
@@ -8,9 +31,9 @@ type MatchedMovieListItemProps = {
 
 const MatchedMovieListItem = ({ movie }: MatchedMovieListItemProps) => {
   return (
-    <li>
-      <img src={`/posters/${movie.id}.jpg`} className="film-poster"></img>
-    </li>
+    <ListItemResult>
+      <img src={`/posters/${movie.id}.jpg`}></img>
+    </ListItemResult>
   );
 };
 
@@ -30,28 +53,16 @@ export function Result() {
 
   return (
     <>
-      <section className="section_final_matches">
-        <div className="final_matches--quote">
-          <p className="final_matches--paragraph paragraph">Caught matches</p>
-        </div>
-        <div className="section_catched_matches--list">
+      <ResultSection>
+        <AppFont fontSize={"1.5em"}>Caught matches</AppFont>
+        <ResultMatchedList>
           {results.map((movie) => (
             <MatchedMovieListItem key={movie.id} movie={movie} />
           ))}
-        </div>
-        <div className="section_catched_matches--percentage">
-          <p className="matches_percentage--paragraph paragraph">
-            You got {results.length} matches!
-          </p>
-        </div>
-        <div className="section_try_again_button">
-          <StyledLinkButton
-            to="/start"
-            className="try_again--button basic_button">
-            Try again!
-          </StyledLinkButton>
-        </div>
-      </section>
+        </ResultMatchedList>
+        <AppFont fontSize={"1.5em"}>You got {results.length} matches!</AppFont>
+        <StyledLinkButton to="/start">Try again!</StyledLinkButton>
+      </ResultSection>
     </>
   );
 }

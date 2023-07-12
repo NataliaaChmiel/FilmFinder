@@ -1,27 +1,31 @@
-import {StyledLinkButton} from "./LinkButton";
+import styled from "@emotion/styled";
+import { StyledLinkButton } from "./LinkButton";
+import { StyledSection } from "./StyledSection";
 // @ts-ignore
 import picture from "./assets/tech-daily-PGuCnUzsRSM-unsplash.jpg";
+import { StyledPicture } from "./StyledPicture";
+import { AppFont } from "./AppFont";
+
+const CenteredAndFlex = styled.div({
+  display: "flex",
+  justifyContent: "center"
+})
+
 export function Home() {
   return (
     <>
-      <section className="section_landing_page">
-        <div className="section_landing_page--photo">
-          <img src={picture} className="page_pic"></img>
+      <StyledSection>
+        <StyledPicture src={picture} />
+        <CenteredAndFlex>
+        <AppFont fontSize={"1.5em"}>
+          Welcome to the world of film!
+        </AppFont>
+        </CenteredAndFlex>
+        <div>
+          <StyledLinkButton to="/start">Let's go!</StyledLinkButton>
+          <StyledLinkButton to="/aboutus">About us</StyledLinkButton>
         </div>
-        <div className="section_landing_page--welcome">
-          <p className="slp_welcome--quote paragraph">
-            Welcome to the world of film!
-          </p>
-        </div>
-        <div className="lp_buttons_container basic_buttons">
-          <StyledLinkButton to="/start" className="lp_button--start basic_button">
-            Let's go!
-          </StyledLinkButton>
-          <StyledLinkButton to="/aboutus" className="lp_button--about basic_button">
-            About us
-          </StyledLinkButton>
-        </div>
-      </section>
+      </StyledSection>
     </>
   );
 }

@@ -1,16 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./sass/main.scss";
-import "./sass/mixins.scss";
-import "./sass/media.scss";
-import "./sass/layout.scss";
-import "./sass/colors.scss";
-import "./sass/home.scss";
-import "./sass/start.scss";
-import "./sass/play.scss";
-import "./sass/result.scss";
-import "./sass/user.scss";
 import { Layout } from "./Layout";
 import { Home } from "./Home";
 import { Start } from "./Start";

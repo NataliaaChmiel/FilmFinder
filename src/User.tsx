@@ -1,6 +1,45 @@
 import { useParams } from "react-router-dom";
 import { StyledLinkButton } from "./LinkButton";
 import { useState } from "react";
+import { StyledSection } from "./StyledSection";
+import styled from "@emotion/styled";
+import { AppFont } from "./AppFont";
+import { theme } from "./theme";
+
+const UserParagraph = styled(AppFont)({
+  display: "flex",
+  justifyContent: "center",
+  padding: "1em",
+  marginBottom: "1em",
+});
+
+const UserForm = styled.div({
+  display: "flex",
+  justifyContent: "center",
+});
+
+const UserNameParagraph = styled(AppFont)({
+  display: "flex",
+  padding: "1em",
+  justifyContent: "center",
+  marginBottom: "1em",
+});
+
+const UserInput = styled.input({
+  marginBottom: "3em",
+  border: "0",
+  textAlign: "center",
+  justifyContent: "center",
+  color: theme.colors.black,
+  fontFamily: theme.fonts.fontPlayfair,
+  padding: "1em",
+  fontSize: "1.2em",
+});
+
+const UserLabel = styled.label({
+  display: "flex",
+  flexDirection: "column",
+});
 
 export function User() {
   const { userNumber } = useParams();
@@ -8,26 +47,25 @@ export function User() {
 
   return (
     <>
-      <section className="section_choose_user">
-        <p className="choose_user--paragraph paragraph">Player {userNumber}</p>
-        <div className="choose_user-form">
-          <label>
-            <p className="choose_user--paragraph paragraph">What's your name?</p>
-            <input
+      <StyledSection>
+        <UserParagraph fontSize={"1.5em"}>Player {userNumber}</UserParagraph>
+        <UserForm>
+          <UserLabel>
+            <UserNameParagraph fontSize={"1.5em"}>
+              What's your name?
+            </UserNameParagraph>
+            <UserInput
               type="text"
-              className="choose_user-input"
               onChange={(e) => setFirstName(e.target.value)}
             />
-          </label>
-        </div>
-        <div className="choose_user_buttons">
-          <StyledLinkButton
-            to={`/user/${userNumber}/movie/1`}
-            disabled={firstName === ""}>
-            Play as {firstName}
-          </StyledLinkButton>
-        </div>
-      </section>
+          </UserLabel>
+        </UserForm>
+        <StyledLinkButton
+          to={`/user/${userNumber}/movie/1`}
+          disabled={firstName === ""}>
+          Play as {firstName}
+        </StyledLinkButton>
+      </StyledSection>
     </>
   );
 }

@@ -6,12 +6,44 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import { StyledLayout } from "./StyledLayout";
+import styled from "@emotion/styled";
+import { theme } from "./theme";
+import { AppFont } from "./AppFont";
 
 enum SocialNetwork {
   Instagram,
   Twitter,
   Linkedin,
 }
+
+const LayoutSection = styled(StyledLayout)({
+  maxWidth: "400px",
+  minHeight: "100vh",
+});
+
+const LogoPadding = styled.div({
+  padding: "2em",
+});
+
+const SocialMediaFooter = styled.div({
+  display: "flex",
+  flexDirection: "row",
+  gap: "3em",
+  justifyContent: "center",
+  alignItems: "center",
+});
+
+const StyledSocialMediaIcon = styled.div({
+  padding: "1em",
+  marginTop: "1em",
+  color: theme.colors.white,
+});
+
+const StyledFooterParagraph = styled(AppFont)({
+  marginTop: "1em",
+  color: theme.colors.white,
+});
 
 type SocialMediaIconProps = {
   name: SocialNetwork;
@@ -32,34 +64,32 @@ const SocialMediaIcon = ({ name }: SocialMediaIconProps) => {
   }
 
   return (
-    <div className={`social_media--${icon} icon-area`}>
-      <span className="icon_single">
-        <FontAwesomeIcon icon={icon} size={"2xl"} />
-      </span>
-    </div>
+    <StyledSocialMediaIcon>
+      <FontAwesomeIcon icon={icon} size={"2xl"} />
+    </StyledSocialMediaIcon>
   );
 };
 
 export function Layout(props: React.PropsWithChildren) {
   return (
     <>
-      <section className="section_layout">
-        <div className="section_landing_page--logo-section">
-          <div className="section_landing_page--logo">
-            <img src={logo} className="logo" />
-          </div>
-        </div>
+      <LayoutSection>
+        <LogoPadding>
+          <img src={logo} />
+        </LogoPadding>
 
         {props.children}
 
-        <div className="social_media--aera">
+        <SocialMediaFooter>
           <SocialMediaIcon name={SocialNetwork.Instagram} />
           <SocialMediaIcon name={SocialNetwork.Twitter} />
           <SocialMediaIcon name={SocialNetwork.Linkedin} />
-        </div>
+        </SocialMediaFooter>
 
-        <p className="social_media--quote paragraph">Find us</p>
-      </section>
+        <StyledFooterParagraph fontSize={"1.5em"}>
+          Find us
+        </StyledFooterParagraph>
+      </LayoutSection>
     </>
   );
 }

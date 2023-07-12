@@ -4,7 +4,16 @@ import picture from "./assets/pexels-lucas-pezeta-2398354.jpg";
 // @ts-ignore
 import movies from "./assets/movies.json";
 import { RoundedButton } from "./LinkButton";
+import { StyledSection } from "./StyledSection";
+import { StyledPicture } from "./StyledPicture";
+import { AppFont } from "./AppFont";
+import styled from "@emotion/styled";
 
+
+const StartParagraph = styled(AppFont)({
+  display: "flex",
+  justifyContent: "center",
+})
 
 export function Start() {
   const navigate = useNavigate();
@@ -20,22 +29,13 @@ export function Start() {
 
   return (
     <>
-      <section className="section_start_game">
-        <div className="section_start--photo">
-          <img
-            src={picture}
-            className="page_pic"
-          ></img>
-        </div>
-        <div className="section_start_game--quote">
-          <p className="start_game--quote paragraph">
-            Let's catch some movie matches!
-          </p>
-        </div>
-        <div className="start_buttons_container">
+      <StyledSection>
+        <StyledPicture src={picture} />
+        <StartParagraph fontSize={"1.5em"}>
+            <p></p>Let's catch some movie matches!
+        </StartParagraph>
           <RoundedButton onClick={clickHandler}>Let's go!</RoundedButton>
-        </div>
-      </section>
+      </StyledSection>
     </>
   );
 }
